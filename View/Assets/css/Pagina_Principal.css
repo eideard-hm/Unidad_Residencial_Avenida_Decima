@@ -1,0 +1,419 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  margin: 0;
+  /*margenes */
+  padding: 0;
+  /*relleno*/
+  box-sizing: border-box;
+  /*cambiar el modelo de caja por defecto de los navegadores*/
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /*tipo de fuente o letra */
+  background: #fff;
+  /*color de fondo */
+}
+
+/*CONFIGUERACION DEL HEADER*/
+#header_nav {
+  position: fixed;
+  /*posicion fija*/
+  width: 100%;
+  /*anchura del elemento*/
+  /*height: 90px;*/
+  top: 0;
+  /*especifica parte de la posición de un elemento posicionado, en la parte superior*/
+  left: 0;
+  /*especifica parte de la posición de un elemento a la izquierda*/
+  padding: 15px;
+  /*relleno*/
+  background: #9198bd;
+  /*color de fondo*/
+}
+
+#nav_header {
+  display: flex;
+  justify-content: space-between;
+}
+
+#nav_header a {
+  color: #000;
+  text-decoration: none;
+}
+
+#nav_header .logo_titulo a {
+  font-family: "Poppins";
+  font-size: 20px;
+  color: #fff;
+}
+
+#nav_header .logo_titulo img {
+  width: 45px;
+  height: 45px;
+  margin-left: 20px;
+}
+
+#nav_header #nav {
+  padding-top: 15px;
+}
+
+#nav_header #nav a {
+  font-family: "Poppins";
+  font-size: 18px;
+  margin-left: 10px;
+  color: #fff;
+  border: 1px solid blue;
+}
+
+#header_nav #button-menu {
+  font-size: 40px;
+  /*Establece el tamaño de letra*/
+  color: #fff;
+  /*color de la fuente*/
+  cursor: pointer;
+  /*cuando yo pase el cursor por encima del elemento me aparezca una mano*/
+}
+
+.bienvenida-usuario {
+  display: block;
+  font-size: 18px;
+  color: #000000;
+}
+
+.nav-user-photo {
+  position: absolute;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50px;
+  height: 50px;
+}
+
+/*segundo navbar*/
+
+#navbar_segundario {
+  background-color: #e3f2fd;
+  top: 80px;
+  z-index: 10;
+}
+
+.navbar .collapse .bienvenida_usuario .nombre_usuario {
+  display: flex;
+  font-family: "Roboto";
+  border: 1px solid blue;
+  margin-right: 30px;
+  text-decoration: none;
+  color: #000;
+  padding: 1px;
+}
+
+.navbar .collapse .bienvenida_usuario .nombre_usuario small {
+  color: #000;
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.navbar .collapse .bienvenida_usuario .nombre_usuario i,
+.navegacion .menu li .icon_usu {
+  font-size: 48px;
+  color: #000;
+  margin-right: 10px;
+}
+
+#navbar_segundario .nombre_conjunto {
+  display: none;
+  font-family: "Roboto";
+  font-weight: 600;
+  color: #000000;
+}
+
+.navegacion {
+  position: fixed;
+  /*posicion fija*/
+  z-index: 1000;
+  left: 0;
+  top: 83px;
+  /*especifica parte de la posición de un elemento a la izquierda*/
+  width: 0%;
+  /*anchura del elemento*/
+  height: 100vh;
+  /*altura del elemento*/
+  background: rgba(0, 0, 0, 0.2);
+  /*color de fondo */
+  transition: background 0.2s;
+  /*tenga una transicion el color de fondo durante 0.2segundos*/
+}
+
+.navegacion ul {
+  width: 330px;
+  /*anchura del elemento*/
+  height: 100%;
+  /*altura del elemento*/
+  background: #fff;
+  /*color de fondo */
+  list-style: none;
+  /*no queremos que la lista tenga las viñetas*/
+  position: absolute;
+  /*que el elemento tenga una posicion absoluta*/
+  top: 0;
+  /*especifica parte de la posición de un elemento posicionado*/
+  left: -330px;
+  /*especifica parte de la posición de un elemento a la izquierda*/
+  transition: left 0.3s;
+  /*que el elemento tenga una transicion de 3segundos a la izquierda*/
+  overflow: scroll;
+}
+
+.navegacion .menu li.title-menu {
+  padding: 20px;
+  /*relleno*/
+  background: #f73c58;
+  /*color de fondo */
+  color: #fff;
+  /*color de la fuente*/
+  text-align: center;
+  /*texto este alineado al centro*/
+  font-size: 20px;
+  /*Establece el tamaño de letra*/
+  height: 80px;
+}
+
+.navegacion .menu li.user {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding: 20px;
+  /*relleno*/
+  background: #f73c58;
+  /*color de fondo */
+  color: #fff;
+  /*color de la fuente*/
+  text-align: center;
+  /*texto este alineado al centro*/
+  font-size: 20px;
+  /*Establece el tamaño de letra*/
+  height: 80px;
+}
+
+.navegacion .menu a {
+  display: block;
+  /*controlar estructuras, en este caso en bloque*/
+  padding: 12px;
+  height: 55px;
+  margin: auto;
+  /*relleno*/
+  border-bottom: 1px solid #c6d0da;
+  /*se utiliza para establecer de forma abreviada el valor de una o más propiedades individuales*/
+  font-size: 21px;
+  /*Establece el tamaño de letra*/
+  font-weight: 200;
+  /*Establece el tamaño grosor de letra*/
+  text-decoration: none;
+  /*texto no tenga ninguna decoracion*/
+  color: #000000;
+  /*color de la fuente*/
+}
+
+.navegacion .menu a:hover {
+  background: #02327d;
+  /*color de fondo */
+  color: #fff;
+  /*color de la fuente*/
+}
+
+.navegacion .menu li i.icon-menu {
+  margin-right: 12px;
+  /*Establece el tamaño de letra*/
+}
+
+.navegacion .menu .item-submenu > a::after {
+  font: normal normal normal 14px/1 FontAwesome;
+  /*permite establecer de una sola vez los valores para todas las propiedades: font-style, font-variant, font-weight, font-size, line-height y font-family*/
+  font-size: inherit;
+  /*Establece el tamaño de letra*/
+  text-rendering: auto;
+  /* proporciona información al motor de representación sobre qué optimizar para la representación de texto.*/
+  -webkit-font-smoothing: antialiased;
+  /*Establece el tamaño de letra*/
+  -moz-osx-font-smoothing: grayscale;
+  /*Establece el tamaño de letra*/
+  content: "\f105";
+  /*Establece el tamaño de letra*/
+  float: right;
+  /*sirve para alinear un elemento*/
+  background: #c5c5c5;
+  /*color de fondo */
+}
+
+.navegacion .submenu li.title-menu {
+  background: #fff;
+  /*color de fondo */
+  color: #000000;
+  /*color de la fuente*/
+}
+
+.navegacion .submenu li.go-back {
+  padding: 10px 20px;
+  /*relleno*/
+  background: #033c94;
+  /*color de fondo */
+  color: #fff;
+  /*color de la fuente*/
+  font-size: 18px;
+  /*Establece el tamaño de letra*/
+  cursor: pointer;
+  /*cuando yo pase el cursor por encima del elemento me aparezca una mano*/
+}
+
+.navegacion .submenu li.go-back::before {
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  /*Establece el tamaño de letra*/
+  text-rendering: auto;
+  /*permite elegir la calidad del texto sobre la velocidad (o viceversa)*/
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "\f0d9";
+  /*contenido*/
+  margin-right: 20px;
+  /*establece el margen derecho de un elemento*/
+}
+
+/*Parte del seccion de la pagina pricipal*/
+
+.conten-page {
+  background-color: #fff;
+  border: 2px solid red;
+  width: 100%;
+  margin-top: 160px;
+}
+
+/*carrusel de bienvenida al usuario*/
+
+/*Aqui empieza el codigo del wrapper o anuncio de la pagina principal*/
+
+.wrapper {
+  position: absolute;
+  top: 45%;
+  left: 62%;
+  transform: translate(-50%, -50%);
+  width: 67%;
+  height: 100px;
+}
+
+.text {
+  text-align: center;
+  line-height: 150px;
+  overflow: hidden;
+  position: absolute;
+  width: 61.7%;
+  height: 150px;
+}
+
+.text span {
+  display: block;
+  transition: 0.5s;
+  width: 100%;
+}
+
+.text1 {
+  background: #000;
+  color: rgba(255, 255, 255, 1);
+  transform-origin: left;
+  left: 0;
+  transform: perspective(1000px) rotateY(-65deg);
+}
+
+.text2 {
+  background: #323232;
+  color: rgba(255, 255, 255, 0.8);
+  transform-origin: right;
+  right: 0;
+  transform: perspective(1000px) rotateY(65deg);
+}
+
+.text1 span {
+  position: absolute;
+  animation: effect1 17.5s linear infinite;
+  font-size: 45px;
+}
+
+.text2 span {
+  position: absolute;
+  animation: effect2 17.5s linear infinite;
+  font-size: 45px;
+}
+
+@keyframes effect1 {
+  0% {
+    left: 200%;
+  }
+  100% {
+    left: -100%;
+  }
+}
+
+@keyframes effect2 {
+  0% {
+    left: 100%;
+  }
+  100% {
+    left: -200%;
+  }
+}
+
+/*Aqui termina el codigo del wrapper o anuncio de la pagina principal*/
+
+/*Código del footer*/
+
+#footer {
+  width: 100%;
+  font-family: "Poppins";
+  margin-top: 10px;
+}
+
+#footer #empresa p {
+  text-align: center;
+}
+
+/*Aqui empieza el responsive desing*/
+
+@media screen and (max-width: 1000px) {
+  .wrapper {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 610px) {
+  #nav_header .logo_titulo a {
+    font-size: 17px;
+  }
+}
+
+@media screen and (max-width: 532px) {
+  #nav_header .logo_titulo a {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 482px) {
+  #nav_header .logo_titulo a {
+    display: none;
+  }
+  #navbar_segundario .nombre_conjunto {
+    display: inline;
+    color: #000;
+    font-weight: 700;
+  }
+}
+
+@media screen and (max-width: 426px) {
+  #navbar_segundario .nombre_conjunto {
+    font-size: 14px;
+    font-weight: 500;
+  }
+}
+
+/*Aqui termina el responsive desing*/

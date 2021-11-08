@@ -1,0 +1,386 @@
+body {
+  font-family: "Roboto", sans-serif;
+  transition: 0.3s ease all;
+}
+/*configuracion del modo nocturno*/
+body.dark {
+  background: #111;
+}
+
+/*modo nocturno de el header*/
+
+body.dark #header_nav {
+  background: #222;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/*modo nocturno del nav*/
+
+body.dark #navbar_segundario {
+  background: #222;
+  color: #fff;
+}
+
+body.dark .bienvenida-usuario {
+  color: #f1f1f1;
+}
+
+body.dark .navbar .collapse .bienvenida_usuario .nombre_usuario small {
+  color: #c8c8c8;
+}
+
+body.dark .navbar .collapse .bienvenida_usuario .nombre_usuario i,
+body.dark .navegacion .menu li .icon_usu {
+  color: #c8c8c8;
+}
+
+body.dark #navbar_segundario a {
+  color: #fff;
+}
+
+/*modo nocturno para el aside de opciones de la pagina principal*/
+body.dark .navegacion ul {
+  background: #222;
+  color: #c8c8c8;
+}
+
+body.dark .navegacion ul li a {
+  color: #c8c8c8;
+}
+
+body.dark .menu li.title-menu,
+body.dark .menu li.user {
+  background: rgba(0, 0, 0, 0.16);
+}
+
+/*modo nocturno del contenedor de las paginas*/
+body.dark .conten-page {
+  background: #222;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/*modo nocturno de los formularios*/
+body.dark #form1 {
+  background: #222;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/*modo nocturno para las tablas*/
+body.dark #datatables {
+  background: #222;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+  color: #fff;
+}
+
+/*modo nocturno para los iconos*/
+body.dark .fas,
+body.dark .fa,
+body.dark .far {
+  color: #c8c8c8;
+}
+
+/*modo nocturno para tutulos de la tabla*/
+body.dark .titulos_encabezados {
+  color: #fff;
+}
+
+/*modo nocturno para el curpo o tboady de las tablas*/
+body.dark.cuerpotabla tr th {
+  color: #fff;
+}
+
+/*modo nocturno de los titulos*/
+body.dark h1,
+body.dark h2,
+body.dark h3,
+body.dark h4,
+body.dark h5,
+body.dark h6 {
+  color: #c8c8c8;
+}
+
+/*modo nocturno de los lables*/
+body.dark .label {
+  color: #fefefe;
+}
+
+/*footer*/
+
+body.dark #footer #empresa p {
+  color: #fff;
+}
+
+body.dark .imagenAnuncio {
+  color: #fefefe;
+}
+
+/*codigo de la modal*/
+
+body.dark .modal .modal-dialog .modal-content {
+  background: #222;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+body.dark .modal .modal-dialog .modal-content .modal-body {
+  background: #222;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.16);
+}
+
+/*AQUI TERMINA EL CODIGO DEL CONFUGURACION DEL MODO NOCTURNO*/
+
+/*Modal de los formularios*/
+
+.modal .modal-dialog .modal-content .modal-body {
+  background: #eeeeee;
+}
+
+.container {
+  width: 90%;
+  max-width: 1250px;
+  margin: auto;
+}
+
+.container #form1 {
+  width: 78%;
+  margin: auto;
+  margin-left: 20%;
+  padding: 10px 20px;
+  background-color: #fff;
+  border: 1px solid #222;
+}
+
+.switch {
+  background: #343d5b;
+  border-radius: 1000px;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  outline: none;
+}
+
+.switch::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  background: #f1f1f1;
+  top: 0;
+  left: 0;
+  right: unset;
+  border-radius: 100px;
+  transition: 0.3s ease all;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.switch.active {
+  background: orange;
+  color: #000;
+}
+
+.switch.active::after {
+  right: 0;
+  left: unset;
+}
+
+.switch span {
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  display: block;
+  background: none;
+  color: #fff;
+}
+
+/*Datatables*/
+
+table thead {
+  text-align: center;
+  width: 100%;
+  background-color: #9198bd;
+}
+
+#datatables {
+  margin: auto;
+  padding-top: 20px;
+  width: 99%;
+  background: #f1f1f1;
+}
+
+/*alinaer los botones con el cuadro de busqueda*/
+.btn-group,
+.btn-group-vertical {
+  position: absolute !important;
+}
+/*codigo de las card pagina de inicio*/
+
+main {
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  z-index: 100000;
+}
+
+.title {
+  text-align: center;
+}
+
+.container-box {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  width: 310px;
+  height: 310px;
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid #eeeeee;
+  border-radius: 14px;
+  text-align: center;
+  position: relative;
+}
+
+.box img {
+  width: 60%;
+  transition: all 400ms;
+}
+
+.box h2 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+  margin-top: 10px;
+  transition: all 500ms;
+}
+
+.box .container-p {
+  width: 100%;
+  height: 150px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  padding: 0px 10px;
+  border-radius: 0px 0px 14px 14px;
+}
+
+.box p {
+  font-size: 14px;
+  color: #7a7a7a;
+  opacity: 0;
+  transform: translateY(150px);
+  transition: all 600ms;
+}
+
+/*-------------------------------------- CÓDIGO DE LA IMAGEN -------------------------------------*/
+
+.prevPhoto {
+  display: flex;
+  justify-content: space-between;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #ccc;
+  position: relative;
+  cursor: pointer;
+  background: url(../Img/Imagenes/upload.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  margin: auto;
+}
+.prevPhoto label {
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+}
+.prevPhoto img {
+  width: 100%;
+  height: 100%;
+}
+.upimg,
+.notBlock {
+  display: none !important;
+}
+.errorArchivo {
+  font-size: 16px;
+  font-family: arial;
+  color: #cc0000;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 10px;
+}
+.delPhoto {
+  color: #fff;
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 25px;
+  height: 25px;
+  background: red;
+  position: absolute;
+  right: -10px;
+  top: -10px;
+  z-index: 10;
+}
+#tbl_list_productos img {
+  width: 50px;
+}
+.imgProductoDelete {
+  width: 175px;
+}
+
+/*Efecto Hover*/
+
+.box:hover {
+  background: #fbfbfe;
+  box-shadow: 10px 10px 0px 0px #6e447a, 20px 20px #dd1438,
+    30px 30px 14px #acd5fd;
+  transform: translate(-5px, -5px);
+}
+
+.box:hover img {
+  transform: translateY(-90px);
+}
+
+.box:hover h2 {
+  color: #000;
+  transform: translateY(-90px);
+}
+
+.box:hover .container-p p {
+  margin-top: 5px;
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+/*reponsive desing*/
+
+@media screen and (max-width: 1000px) {
+  .box {
+    width: 250px;
+    height: 250px;
+  }
+}
+
+@media screen and (max-width: 830px) {
+  .box {
+    width: 200px;
+    height: 200px;
+  }
+  .box.title {
+    font-size: 15px;
+  }
+}

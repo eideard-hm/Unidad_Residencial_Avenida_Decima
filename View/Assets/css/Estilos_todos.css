@@ -1,0 +1,387 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*ojo de ver contraseña*/
+
+.eye {
+  font-size: 22px;
+  cursor: pointer;
+  color: #999;
+}
+
+#hide1 {
+  display: none;
+}
+
+.text-center img {
+  width: 95%;
+  height: 250px;
+  margin: 0 auto;
+  border-radius: 7px;
+}
+
+.titulo {
+  font-family: Arial, Helvetica, sans-serif;
+  display: inline-block;
+  margin-top: 5px;
+}
+
+h1 {
+  text-align: center;
+  /*centrar el título*/
+  font-family: Algerian;
+  color: #1a2537;
+  /*color del texto*/
+  font-size: 40px;
+  margin: 0;
+  margin-bottom: 20px;
+}
+
+input,
+textarea {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 7px;
+  box-sizing: border-box;
+  color: #000;
+  font-size: 16px;
+}
+
+::placeholder {
+  color: #ccc;
+}
+
+textarea {
+  min-height: 100px;
+  max-height: 400px;
+  max-width: 100%;
+}
+
+/*barra de scroll*/
+
+body::-webkit-scrollbar {
+  width: 13px;
+  border-radius: 70px;
+  height: 30px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #790416;
+  border-radius: 50px;
+}
+
+/*CÓDIGO DE LOS BOTONES DE LA CRUD*/
+
+.botones {
+  transition: all 1s;
+}
+
+.Registar,
+.Modificar {
+  width: 25%;
+  height: 50px;
+  font-size: 20px;
+  font-weight: 600;
+  box-shadow: 4px 5px 8px rgba(0, 0, 0, 0.7);
+  opacity: 0.9;
+  color: #000000;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.Registar {
+  background: #008000;
+}
+.Modificar {
+  background: #fe5c05;
+}
+
+.Registar:hover,
+.Modificar:hover {
+  width: 33%;
+  height: 60px;
+  transform: scale(1, 1);
+  color: #fff;
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.icono:hover {
+  cursor: pointer;
+}
+
+/*Aqui empieza el codigo de la calculadora*/
+
+.main {
+  margin-top: 25px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 100%;
+  height: 100vh;
+}
+
+.calculadora {
+  width: 350px;
+  height: 500px;
+  background: transparent;
+  border-radius: 15px;
+  position: relative;
+}
+
+.calculadora::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  -webkit-box-shadow: 0 10px 20px black;
+  box-shadow: 0 10px 20px black;
+  opacity: 0.3;
+}
+
+.top-bar {
+  width: 100%;
+  height: 50px;
+  background: white;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+  padding-left: 2rem;
+  border-bottom: 1px solid grey;
+  border-radius: 15px 15px 0 0;
+}
+
+.top-bar::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: green;
+  border-radius: 50%;
+  -webkit-box-shadow: 20px 0 0 grey, -20px 0 0 red;
+  box-shadow: 20px 0 0 grey, -20px 0 0 red;
+}
+
+.screen {
+  width: 100%;
+  height: 120px;
+  text-align: right;
+  padding-right: 1rem;
+  padding-top: 0.5rem;
+  background: white;
+}
+
+.screen__top {
+  font-size: 1.5rem;
+}
+
+.screen__content {
+  font-size: 4rem;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 5px;
+  margin-top: 5px;
+}
+
+.button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 1em;
+  font-size: 1.21rem;
+  background: white;
+  position: relative;
+  z-index: 100;
+}
+
+.button:nth-child(4n) {
+  background: lightsalmon;
+}
+
+.button:nth-child(17) {
+  border-bottom-left-radius: 15px;
+}
+
+.button:last-child {
+  border-bottom-right-radius: 15px;
+}
+
+.button:not(:nth-child(18)):hover {
+  background: lightgreen;
+  cursor: pointer;
+}
+
+/*Aqui termina el codigo de la calculadora*/
+
+/*Código del footer*/
+
+#footer {
+  width: 100%;
+  font-family: "Poppins";
+  margin-top: 10px;
+}
+
+/*Aqui empieza el responsive desing*/
+
+@media screen and (max-width: 1000px) {
+  #form1 {
+    width: 98%;
+    margin-top: 100px;
+  }
+  .Registrarme {
+    margin: auto;
+    width: 42%;
+  }
+  .Registrarme:hover {
+    width: 43%;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  #form1 {
+    width: 98%;
+    margin-top: 110px;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  #form1 {
+    width: 98%;
+    margin-top: 110px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #form1 {
+    width: 98%;
+    margin-top: 110px;
+  }
+  #container {
+    width: 100%;
+  }
+  .text-center {
+    width: 100%;
+  }
+  .gris {
+    width: 100%;
+  }
+  .info {
+    width: 90%;
+  }
+  .Registrarme {
+    margin: auto;
+    width: 92%;
+  }
+  .Registrarme:hover {
+    width: 93%;
+  }
+  .gris.ir_atras {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  h1 {
+    font-size: larger;
+    text-align: center;
+  }
+  .titulo {
+    display: none;
+  }
+  #form1 {
+    width: 100%;
+  }
+
+  .container {
+    width: 100%;
+    padding-top: 18px;
+  }
+  .text-center {
+    width: 100%;
+  }
+
+  .Registar,
+  .Modificar,
+  .Inhabilitar,
+  .Consultar {
+    margin: auto;
+    display: block;
+    width: 95%;
+  }
+  .boton {
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 62px;
+  }
+
+  #passwordHelpBlock {
+    display: none;
+  }
+  .input-group-text {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  #form1 {
+    width: 99%;
+  }
+
+  .container {
+    width: 100%;
+    padding-top: 18px;
+  }
+
+  .Registar,
+  .Modificar,
+  .Inhabilitar,
+  .Consultar {
+    margin: auto;
+    display: block;
+    width: 95%;
+  }
+
+  .main {
+    margin-top: 62px;
+  }
+}
+
+/*Aqui termina el responsive desing*/

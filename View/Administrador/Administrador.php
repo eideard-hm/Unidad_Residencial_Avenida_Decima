@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="description" content="Sistema de información de la Unidad Residencial Avenida Décima">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="keywords" content="Unidad Residencial Avenida Décima | URAD">
+    <title><?php echo $data['titulo_pagina']; ?></title>
+    <!--HOJAS DE ESTILOS-->
+    <?php
+    estilos();
+    ?>
+
+</head>
+
+<body>
+    <?php
+    asidePrincipal();
+    ?>
+    <!--CONTENIDO DE LA PÁGINA PRINCIPAL-->
+    <section class="conten-page">
+        <div class="container" id="datatables">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Administrador</h1>
+                    <?php if ($_SESSION['tipoUser'] == '<span class="badge badge-success">Administrador</span>') { ?>
+                        <div class="card-body">
+                            <span class="btn btn-primary" style="color: #fff; background: blue;" onclick="openModal();">
+                                Agregar nuevo Administrador <span class="fas fa-user-plus" style="font-size: 20px; color: #fff;"></span>
+                            </span>
+                        </div>
+                    <?php } ?>
+
+                    <table id="example" class="table table-striped table-bordered" style="width:100%">
+                        <thead>
+                            <tr class="titulos_encabezados">
+                                <th>ID</th>
+                                <th>Email</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Tipo Doc</th>
+                                <th>N° Doc</th>
+                                <th>Teléfono</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                        <tfoot>
+                            <tr class="titulos_encabezados">
+                                <th>ID</th>
+                                <th>Email</th>
+                                <th>Nombres</th>
+                                <th>Apellidos</th>
+                                <th>Tipo Doc</th>
+                                <th>N° Doc</th>
+                                <th>Teléfono</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal -->
+        <div class="modal fade" id="agregarnuevosdatosmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modal-title">Agregar nuevo Administrador</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="formAdmin" name="formAdmin" method="POST" class="needs-validation" novalidate enctype="multipart/form-data">
+                            <!--Inicio formulario-->
+
+                            <h1><span id="textTittle">Registrar</span> Administrador</h1>
+                            <!--Título principal-->
+
+                            <div class="text-center">
+                                <!--creamos una clase para la imagen-->
+                                <img src="<?php echo SERVERURL; ?>View/Assets/Img/Imagenes/administrador.png" />
+                                <!--colocar una imagen-->
+                            </div>
+                            <!--Fin contenedor-->
+                            <br />
+                            <!--Espacio-->
+
+                            <input type="hidden" id="idAdmin" name="idAdmin" value="">
+
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="contraseña"><i class="fas fa-envelope"> Email</i></label>
+                                    <!--Caja de texto en el formulario y su contenido-->
+                                    <input type="email" class="form-control" id="correoAdmin" name="correoAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese su correo Administrador" placeholder="name@example.com" maxlength="50" required>
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese un email.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="contraseña"><i class="fas fa-key"> Contraseña</i></label>
+                                    <div class="input-group mb-3">
+                                        <!--para agrupar los elementos-->
+                                        <input type="password" class="form-control" id="pass" name="contraseñaAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese su contraseña Guarda" placeholder="Ingrese la contraseña" required>
+                                        <div class="input-group-append">
+                                            <!--espacio para añadir elementos como texto-->
+                                            <span class="eye input-group-text" id="basic-addon2" onclick="myFunction()">
+                                                <i id="hide1" class="fa fa-eye"></i>
+                                                <i id="hide2" class="fa fa-eye-slash" id="icono"></i>
+                                            </span>
+                                            <!--ícono para que el usuario pueda ver o no lo que ha escrito en el campo de contraseña-->
+                                        </div>
+                                        <div class="invalid-feedback">
+                                            Por favor ingrese una contraseña válida.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="nombreusuario"><i class="fas fa-file-signature"> Nombres</i></label>
+                                    <!--Espacio para el nombre del usuario-->
+                                    <input type="text" class="form-control" id="nombreAdmin" name="nombreAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese los nombres Administrador" placeholder="Ingrese sus nombres" maxlength="30" required>
+                                    <!--Espacio para el nombre del admin con su características mencionadas-->
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese sus nombres.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="tipousuario"><i class="fas fa-edit"> Apellidos</i></label>
+                                    <!--Espacio para los apellidos del usuario-->
+                                    <input type="text" class="form-control" id="apellidosAdmin" name="apellidosAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese los Apellidos Administrador" placeholder="Ingrese sus apellidos" maxlength="30" required>
+                                    <!--Espacio para el apellido del admin con su características mencionadas-->
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese sus apellidos.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="tipodocumento"><i class="fas fa-id-card"> Tipo de Documento</i></label>
+                                    <!--Espacio que indica el tipo de documento-->
+                                    <select class="custom-select form-control" name="TipoDocumentoAdmin" id="TipoDocumentoAdmin" required>
+                                        <!--Lista para elegir el tipo de documento-->
+                                        <option selected disabled value="">Elige el tipo de documento</option>>
+                                        <!--Opción de la lista-->
+                                        <option value="Cédula de Ciudadanía">Cédula de Ciudadanía</option>
+                                        <!--Opción de la lista-->
+                                        <option value="Registro civil">Registro civil</option>
+                                        <!--Opción de la lista-->
+                                        <option value="Cédula de extranjería">Cédula de extranjería</option>
+                                        <!--Opción de la lista-->
+                                        <option value="Pasaporte extranjero">Pasaporte extranjero</option>
+                                        <!--Opción de la lista-->
+                                    </select>
+                                    <!--Fin lista desplegable-->
+                                    <div class="invalid-feedback">
+                                        Por favor seleccione un tipo de documento válido.
+                                    </div>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="numeroDocumento"><i class="fas fa-id-card-alt"> Número de documento</i></label>
+                                    <!--Espacio que indica que el usuario debe poner el número de documento-->
+                                    <input type="text" class="form-control" id="numDocAdmin" name="numDocAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese el Número de documento" placeholder="Ingrese el número de documento" pattern="[0-9]{7-10}" minlength="7" MaxLength="10" required>
+                                    <!--Espacio donde el usuario ingresará su número de documento con las respectivas características-->
+                                    <div class="invalid-feedback">
+                                        Por favor ingrese su número de documento.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <!--Agrega una estructura organizada al formulario-->
+                                <label for="telefono"><i class="fas fa-mobile"> Teléfono</i></label>
+                                <!--Caja de texto en el formulario y su contenido-->
+                                <input type="text" class="form-control" id="NumTelAdmin" name="NumTelAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese el Número de teléfono" placeholder="Ingrese el número de teléfono" pattern="[0-9]{10}" MaxLength="10" required>
+                                <!--Espacio donde el usuario ingresará su número de teléfono con las respectivas características-->
+                                <div class="invalid-feedback">
+                                    Por favor ingrese su número de teléfono.
+                                </div>
+                            </div>
+                            <!--Final etiqueta div (funciona para agrupar contenido)-->
+
+
+                            <div class="form-group">
+                                <label for="estadoParquadero"><i class="fas fa-toggle-off"> Estado</i></label>
+                                <!--Espacio que indica el tipo de documento-->
+                                <select class="custom-select form-control" id="estadoAdmin" name="estadoAdmin" data-toggle="tooltip" data-placement="bottom" title="Ingrese el Estado del administrador" required>
+                                    <!--Lista para elegir el tipo de documento-->
+                                    <option selected disabled value="">Elige su estado administrador</option>
+                                    <!--Opción de la lista-->
+                                    <option>Activo</option>
+                                    <!-- elementos de la lista desplegable-->
+                                    <option>Inactivo</option>
+                                    <!-- elementos de la lista desplegable-->
+                                </select>
+                                <!--Fin lista desplegable-->
+                                <div class="invalid-feedback">
+                                    Por favor seleccione un estado de documento válido.
+                                </div>
+                            </div>
+
+                            <select name="tipousuario" id="tipousuario" class="custom-select form-control" hidden>
+                                <option value="1">1</option>
+                            </select>
+
+                            <div class="botones">
+                                <br />
+                                <!--obligar un salto de linea-->
+                                <button type="submit" id="btnInsertAdmin" name="insertar" value="Registrarme" class="Registar" data-toggle="tooltip" data-placement="bottom" title="Registrar Administrador"><span id="btnText">Registrar</span>&nbsp<i class="far fa-save" style="font-size: 20px;"></i> </button>
+                            </div>
+                        </form>
+                        <!--Fin de formulario-->
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Cerrar &nbsp
+                            <i class="fas fa-window-close" style="font-size: 20px; background: red;"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!--FOOTER DE LA PÁGINA-->
+    <?php
+    footerSitio();
+    ?>
+
+    <!--SCRIPTS-->
+    <?php
+    scriptSitio();
+    ?>
+    <script src="<?php echo SERVERURL; ?>View/Assets/js/functionAdmin.js"></script>
+
+</body>
+
+</html>
